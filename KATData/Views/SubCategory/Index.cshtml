@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "SubCategory Page";
+}
+
+
+<h1 class="h3 mb-4 text-gray-800">Sub Category List Page</h1>
+<asp:ScriptManager ID="ScriptManager1" runat="server">
+</asp:ScriptManager>
+
+<div class="row">
+    <div class="col-lg-12">
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <button class="btn btn-primary" id="btnAdd" onclick="NewAddFunction()" type="button">New SubCategory</button><br/><br />
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Sub Category</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Category A</td>
+                        <td>Sub Category 1</td>
+                        <td><a href="SubCategory/Create">Edit</a></td>
+                        <td><a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>Category A</td>
+                        <td>Sub Category 2</td>
+                        <td><a href="SubCategory/Create">Edit</a></td>
+                        <td><a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>Category A</td>
+                        <td>Sub Category 3</td>
+                        <td><a href="SubCategory/Create">Edit</a></td>
+                        <td><a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>Category B</td>
+                        <td>Sub Category 4</td>
+                        <td><a href="SubCategory/Create">Edit</a></td>
+                        <td><a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>Category B</td>
+                        <td>Sub Category 5</td>
+                        <td><a href="SubCategory/Create">Edit</a></td>
+                        <td><a href="#">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>Category B</td>
+                        <td>Sub Category 6</td>
+                        <td><a href="SubCategory/Create">Edit</a></td>
+                        <td><a href="#">Delete</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<script>
+    function NewAddFunction() {
+        window.location.href = '/SubCategory/Create';
+    }
+
+</script>

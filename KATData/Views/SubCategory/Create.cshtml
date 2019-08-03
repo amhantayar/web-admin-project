@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+ 
+ 
+<div class="row">
+    <div class="col-lg-6">
+        <asp:UpdatePanel ID="updateInformationPanel" runat="server">
+            <ContentTemplate>
+                <div class="card shadow mb-4">
+                    <div class="card-header">
+                        New Sub Category
+                    </div>
+                    <div class="card-body">
+                        <div class="form-horizontal">
+                            <asp:HiddenField runat="server" ID="hidItemGUID" Value="" />
+                            <fieldset>
+                                <legend></legend>
+                                <div class="control-group">
+                                    <label class="control-label">Category</label>
+                                    <div class="controls">
+                                        <select class="form-control form-control-user">
+                                            <option value="volvo">Category A</option>
+                                            <option value="saab">Category B</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Sub Category *</label>
+                                    <div class="controls">
+                                        <input type="text" name="txtSubCategory" class="form-control form-control-user">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label"></label>
+                                    <div class="controls"> 
+                                        <button class="button btn btn-success" id="btnSave" onclick="myFunction()" width="120px" type="button" >Save</button> | <button id="btnCancel" onclick="myFunction()" class="button btn btn-warning" width="120px" type="button">Cancel</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                        </div>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div> 
+</div> 
+
+<script>
+    function myFunction() { 
+  window.location.href = '/SubCategory';
+}
+    
+</script>
