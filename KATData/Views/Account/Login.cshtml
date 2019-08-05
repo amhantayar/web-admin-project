@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="~/js/vendor/fontawesome-free/css/all.min.css" />
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" method="post" action="userlogin">
         <div class="container">
             <!-- Outer Row -->
             <div class="row justify-content-center">
@@ -37,13 +37,12 @@
                                         </div>
                                         <form class="user">
                                             <div class="form-group">
-                                                <input type="text" name="txtUserID" class="form-control form-control-user" placeholder="Enter Your User ID">
+                                                <input type="text" id="userid" name="userid" class="form-control form-control-user" placeholder="Enter Your User ID">
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="txtPassword" class="form-control form-control-user" placeholder="Enter Your Password">
+                                                <input type="text" id="password" name="password" class="form-control form-control-user" placeholder="Enter Your Password">
                                             </div>
-                                            <button class="button btn btn-success" id="btnSave" onclick="myFunction()" width="120px" type="button">Save</button>
-                                            <asp:Button runat="server" ID="btnLogIn" CssClass="btn btn-primary btn-user btn-block" Text="LogIn" onclick="myFunction()" />
+                                            <button class="btn btn-primary btn-user btn-block" id="btnSave" onclick="Validate()" width="120px" type="button">LogIn</button>
                                         </form>
                                     </div>
                                 </div>
@@ -60,13 +59,37 @@
         <script type="text/javascript" src="~/js/vendor/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="~/js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script type="text/javascript" src="~/js/vendor/jquery-easing/jquery.easing.min.js"></script>
-        <script type="text/javascript" src="~/js/sb-admin-2.min.js"></script> 
+        <script type="text/javascript" src="~/js/sb-admin-2.min.js"></script>
         <script>
             function myFunction() {
                 window.location.href = '/SubCategory';
             }
         </script>
-
+        <script>
+  function Validate() {
+    $.ajax(
+    {
+      type: "POST",
+      url: '@Url.Action("Validate", "Account")',
+      data: {
+        userid: $('#userid').val(),
+        password: $('#password').val()
+      },
+      error: function (result) {
+        alert("There is a Problem, Try Again!");
+      },
+      success: function (result) {
+        console.log(result);
+        if (result.status == true) {
+          window.location.href = '@Url.Action("Index", "Home")';
+        }
+        else {
+          alert(result.message);
+        }
+      }
+    });
+  }
+        </script>
     </form>
 </body >
 </html >

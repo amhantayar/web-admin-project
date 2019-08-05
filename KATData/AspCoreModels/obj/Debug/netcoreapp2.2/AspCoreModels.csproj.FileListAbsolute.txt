@@ -1,0 +1,8 @@
+C:\Users\zaw\Desktop\Aung Thu\KATData\AspCoreModels\bin\Debug\netcoreapp2.2\AspCoreModels.deps.json
+C:\Users\zaw\Desktop\Aung Thu\KATData\AspCoreModels\bin\Debug\netcoreapp2.2\AspCoreModels.dll
+C:\Users\zaw\Desktop\Aung Thu\KATData\AspCoreModels\bin\Debug\netcoreapp2.2\AspCoreModels.pdb
+C:\Users\zaw\Desktop\Aung Thu\KATData\AspCoreModels\obj\Debug\netcoreapp2.2\AspCoreModels.csproj.CoreCompileInputs.cache
+C:\Users\zaw\Desktop\Aung Thu\KATData\AspCoreModels\obj\Debug\netcoreapp2.2\AspCoreModels.AssemblyInfoInputs.cache
+C:\Users\zaw\Desktop\Aung Thu\KATData\AspCoreModels\obj\Debug\netcoreapp2.2\AspCoreModels.AssemblyInfo.cs
+C:\Users\zaw\Desktop\Aung Thu\KATData\AspCoreModels\obj\Debug\netcoreapp2.2\AspCoreModels.dll
+C:\Users\zaw\Desktop\Aung Thu\KATData\AspCoreModels\obj\Debug\netcoreapp2.2\AspCoreModels.pdb
