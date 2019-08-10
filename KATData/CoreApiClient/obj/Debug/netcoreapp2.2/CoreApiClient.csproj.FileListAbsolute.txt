@@ -2,8 +2,6 @@ C:\Users\zaw\Desktop\Aung Thu\KATData\CoreApiClient\bin\Debug\netcoreapp2.2\Core
 C:\Users\zaw\Desktop\Aung Thu\KATData\CoreApiClient\bin\Debug\netcoreapp2.2\CoreApiClient.dll
 C:\Users\zaw\Desktop\Aung Thu\KATData\CoreApiClient\obj\Debug\netcoreapp2.2\CoreApiClient.csprojAssemblyReference.cache
 C:\Users\zaw\Desktop\Aung Thu\KATData\CoreApiClient\obj\Debug\netcoreapp2.2\CoreApiClient.csproj.CoreCompileInputs.cache
-C:\Users\zaw\Desktop\Aung Thu\KATData\CoreApiClient\obj\Debug\netcoreapp2.2\CoreApiClient.AssemblyInfoInputs.cache
-C:\Users\zaw\Desktop\Aung Thu\KATData\CoreApiClient\obj\Debug\netcoreapp2.2\CoreApiClient.AssemblyInfo.cs
 C:\Users\zaw\Desktop\Aung Thu\KATData\CoreApiClient\bin\Debug\netcoreapp2.2\CoreApiClient.pdb
 C:\Users\zaw\Desktop\Aung Thu\KATData\CoreApiClient\bin\Debug\netcoreapp2.2\AspCoreModels.dll
 C:\Users\zaw\Desktop\Aung Thu\KATData\CoreApiClient\bin\Debug\netcoreapp2.2\AspCoreModels.pdb

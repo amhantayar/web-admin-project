@@ -18,7 +18,7 @@ namespace CoreApiClient
 
         public async Task<BaseResponse> UserLogin(UsersModel model)
         { 
-            var requestUrl = CreateRequestUri(string.Format(System.Globalization.CultureInfo.InvariantCulture, "users/"+model.userid+"/"+model.password));
+            var requestUrl = CreateRequestUri(string.Format(System.Globalization.CultureInfo.InvariantCulture, "users/GetUserDataForLogin/" + model.userid+"/"+model.password));
 
             return await GetAsync<BaseResponse>(requestUrl);
         }

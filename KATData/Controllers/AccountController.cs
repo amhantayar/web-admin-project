@@ -8,6 +8,8 @@ using KATData.Models;
 using KATData.Utility;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace KATData.Controllers
 {
@@ -25,42 +27,24 @@ namespace KATData.Controllers
         }
         public async Task<JsonResult>  Validate(UsersModel info )
         {
+            bool status = false;
             var model = new UsersModel()
             {
                 userid = info.userid,
                 password = info.password
             };
-            var response =   ApiClientFactory.Instance.UserLogin(model);
-            return Json(response);
-
-            //bool status = false;
-            //if (status)
-            //{
-            //    return Json(new { status = true, message = "Login Successfull!" });
-
-            //   // return Json(new { status = false, message = "Invalid Password!" });
-            //}
-            //else
-            //{
-            //    return Json(new { status = false, message = "Invalid Email!" });
-            //}
-            //var _admin = db.Admins.Where(s => s.Email == admin.Email);
-            //if (_admin.Any())
-            //{
-            //    if (_admin.Where(s => s.Password == admin.Password).Any())
-            //    {
-
-            //        return Json(new { status = true, message = "Login Successfull!" });
-            //    }
-            //    else
-            //    {
-            //        return Json(new { status = false, message = "Invalid Password!" });
-            //    }
-            //}
-            //else
-            //{
-            //    return Json(new { status = false, message = "Invalid Email!" });
-            //}
+            var response = await  ApiClientFactory.Instance.UserLogin(model); 
+            string dataString = response.data.ToString();
+            UsersModel[] itm =  JsonConvert.DeserializeObject<UsersModel[]>(dataString);
+ 
+            if(itm.Length >0)
+            {
+                return Json(new { status = true, message = "Login Successfull!" });
+            }
+            else
+            {
+                return Json(new { status = false, message = "Invalid LogIn!" });
+            } 
         }
     }
 }

@@ -30,20 +30,38 @@ namespace CoreApiClient
             var response = await _httpClient.GetAsync(requestUrl, HttpCompletionOption.ResponseHeadersRead);
             response.EnsureSuccessStatusCode();
             var data = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<BaseResponse>(data);
+          
+            return   JsonConvert.DeserializeObject<BaseResponse>(data);
         }
  
         /// <summary>
         /// Common method for making POST calls
         /// </summary>
-        private async Task<Message<T>> PostAsync<T>(Uri requestUrl, T content)
+        private async Task<BaseResponse> PostAsync<T>(Uri requestUrl, T content)
         {
             addHeaders();
             var response = await _httpClient.PostAsync(requestUrl.ToString(), CreateHttpContent<T>(content));
             response.EnsureSuccessStatusCode();
             var data = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<Message<T>>(data);
+            return JsonConvert.DeserializeObject<BaseResponse>(data);
         }
+        private async Task<BaseResponse>PutAsync<T>(Uri requestUrl, T content)
+        {
+            addHeaders();
+            var response = await _httpClient.PutAsync(requestUrl.ToString(), CreateHttpContent<T>(content));
+            response.EnsureSuccessStatusCode();
+            var data = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<BaseResponse>(data);
+        }
+        private async Task<BaseResponse> DeleteAsync<T>(Uri requestUrl, T content)
+        {
+            addHeaders();
+            var response = await _httpClient.PutAsync(requestUrl.ToString(), CreateHttpContent<T>(content)); // later will change for delete sync with token by zzz
+            response.EnsureSuccessStatusCode();
+            var data = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<BaseResponse>(data);
+        }
+
         private async Task<Message<T1>> PostAsync<T1, T2>(Uri requestUrl, T2 content)
         {
             addHeaders();

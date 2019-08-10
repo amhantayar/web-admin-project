@@ -78,8 +78,7 @@
       error: function (result) {
         alert("There is a Problem, Try Again!");
       },
-      success: function (result) {
-        console.log(result);
+      success: function (result) { 
         if (result.status == true) {
           window.location.href = '@Url.Action("Index", "Home")';
         }
